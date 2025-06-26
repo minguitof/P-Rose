@@ -11,6 +11,9 @@
 
       <div class="flex space-x-4 mt-4 text-xl text-white">
         <a href="#" target="#" rel="#">
+          <i class="fab fa-whatsapp"></i>
+        </a>
+        <a href="#" target="#" rel="#">
           <i class="fab fa-tiktok"></i>
         </a>
         <a href="#" target="#" rel="#">
@@ -22,9 +25,9 @@
         <a href="#" target="#" rel="#">
           <i class="fab fa-x-twitter"></i>
         </a>
-        <a href="#" target="#" rel="#">
+        <!-- <a href="#" target="#" rel="#">
           <i class="fab fa-linkedin"></i>
-        </a>
+        </a> -->
         <a href="#" target="#" rel="#">
           <i class="fab fa-pinterest"></i>
         </a>

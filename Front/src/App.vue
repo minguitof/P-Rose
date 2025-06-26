@@ -14,5 +14,4 @@ import ProductsList from './components/ProductsList.vue'
 import SatisfiedCustomers from './components/SatisfiedCustomers.vue'
 import PRose from './components/icons/P_rose.vue'
 
-
 </script>
