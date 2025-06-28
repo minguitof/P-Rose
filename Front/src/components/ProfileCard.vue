@@ -7,7 +7,9 @@
         class="w-72 h-72 rounded-full object-cover mb-4 border-4 border-yellow-500"
       />
       <h1 class="text-2xl font-bold">Andres Felipe Hernandez</h1>
-      <p class="text-sm text-gray-300">EL ARTISTA DE LAS ESTRELLAS ⭐</p>
+      <p class="text-md text-gray-300">REFLEJÁ TU MEJOR VERSIÓN ⭐</p>
+      <br>
+      <p class="text-sm text-gray-300 italic tracking-wide">Tu look habla por vos. Asegurate de que diga lo correcto. </p>
 
       <div class="flex space-x-4 mt-4 text-xl text-white">
         <a href="#" target="#" rel="#">

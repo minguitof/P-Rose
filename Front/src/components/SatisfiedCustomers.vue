@@ -10,27 +10,34 @@
     </div>
 
     <!-- Swiper con navegación -->
-    <div class="w-full py-10 bg-black relative overflow-visible">
+    <div class="relative w-full py-10 bg-black overflow-hidden">
 
-      <!-- Botones de navegación (z-30 para que estén al frente) -->
-      <div class="swiper-button-prev clientes-prev absolute top-1/2 -left-4 z-30 w-10 h-10 bg-yellow-500 rounded-full flex items-center justify-center text-black hover:scale-110 transition -translate-y-1/2">
-        
-      </div>
-      <div class="swiper-button-next clientes-next absolute top-1/2 -right-4 z-30 w-10 h-10 bg-yellow-500 rounded-full flex items-center justify-center text-black hover:scale-110 transition -translate-y-1/2">
-        
-      </div>
+<!-- Botón Anterior (sin rotación, flecha real hacia la izquierda) -->
+<div class="clientes-prev absolute top-1/2 left-0 z-30 w-12 h-12 bg-yellow-400 rounded-full shadow-xl flex items-center justify-center hover:bg-yellow-500 transition duration-300 -translate-y-1/2 group">
+  <svg class="w-5 h-5 text-black group-hover:-translate-x-1 transition-transform duration-300" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+    <path fill-rule="evenodd" d="M12.293 4.293a1 1 0 010 1.414L8.414 10l3.879 4.293a1 1 0 01-1.586 1.414l-5-5a1 1 0 010-1.414l5-5a1 1 0 011.586 0z" clip-rule="evenodd" />
+  </svg>
+</div>
+
+<!-- Botón Siguiente -->
+<div class="clientes-next absolute top-1/2 right-0 z-30 w-12 h-12 bg-yellow-400 rounded-full shadow-xl flex items-center justify-center hover:bg-yellow-500 transition duration-300 -translate-y-1/2 group">
+  <svg class="w-5 h-5 text-black group-hover:translate-x-1 transition-transform duration-300" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+    <path fill-rule="evenodd" d="M7.707 15.707a1 1 0 010-1.414L11.586 10 7.707 6.707a1 1 0 011.586-1.414l5 5a1 1 0 010 1.414l-5 5a1 1 0 01-1.586 0z" clip-rule="evenodd" />
+  </svg>
+</div>
 
       <!-- Swiper -->
       <Swiper
-        class="z-10 overflow-visible"
+        class="z-10"
         :modules="[Navigation]"
         :navigation="{
           nextEl: '.clientes-next',
           prevEl: '.clientes-prev'
         }"
-        :slides-per-view="1.2"
+        :slides-per-view="1.1"
         :space-between="16"
         :centeredSlides="true"
+        :loop="true"
         :breakpoints="{
           640: { slidesPerView: 2.2 },
           1024: { slidesPerView: 3.2 }
