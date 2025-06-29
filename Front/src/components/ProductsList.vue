@@ -58,7 +58,7 @@
           prevEl: '.productos-prev'
         }"
         :slides-per-view="1.2"
-        :space-between="10"
+        :space-between="14"
         :centeredSlides="true"
         :loop="true"
         :breakpoints="{
