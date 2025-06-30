@@ -73,14 +73,16 @@
           :key="product.id"
           class="overflow-visible"
         >
-            <div class="aspect-square max-w-[420px] bg-gradient-to-b from-black via-gray-900 to-black border border-yellow-400 rounded-2xl shadow-lg text-white mx-auto overflow-hidden hover:scale-105 transition-transform duration-300 flex flex-col">
-              <img :src="product.image" alt="" class="h-[70%] w-full object-cover" />
-              <div class="p-3 h-[40%] flex flex-col justify-between">
-                <h3 class="text-lg font-bold">{{ product.name }}</h3>
-                <p class="text-yellow-300 font-semibold">{{ product.price }}</p>
-              </div>
+          <div
+            class="aspect-square max-w-[420px] bg-gradient-to-b from-black via-gray-900 to-black border border-yellow-400 rounded-2xl shadow-lg text-white mx-auto overflow-hidden hover:scale-105 transition-transform duration-300 flex flex-col cursor-pointer"
+            @click="enviarMensajeWhatsApp(product.name, product.price)"
+          >
+            <img :src="product.image" alt="" class="h-[70%] w-full object-cover" />
+            <div class="p-3 h-[40%] flex flex-col justify-between">
+              <h3 class="text-lg font-bold">{{ product.name }}</h3>
+              <p class="text-yellow-300 font-semibold">{{ product.price }}</p>
             </div>
-          
+          </div>
         </SwiperSlide>
       </Swiper>
     </div>
@@ -111,6 +113,15 @@ onMounted(async () => {
   await nextTick()
   // Esto asegura que Swiper pueda encontrar los botones personalizados
 })
+
+const phone = '573045840264'
+const barberName = 'Andrés'
+
+const enviarMensajeWhatsApp = (productName, productPrice) => {
+  const mensaje = `Hola ${barberName}, estoy interesado en el producto "${productName}" que vale ${productPrice}. ¿Podrías darme más información?`
+  const url = `https://api.whatsapp.com/send?phone=${phone}&text=${encodeURIComponent(mensaje)}`
+  window.open(url, '_blank')
+}
 
 </script>
 

@@ -13,7 +13,7 @@
       <p class="text-sm text-gray-300 italic tracking-wide">Tu look habla por vos. Asegurate de que diga lo correcto.</p>
 
       <div class="flex space-x-4 mt-4 text-xl text-white">
-        <a href="https://wa.me/573045840264?text=Hola,%20estoy%20interesado%20en%20tus%20productos%20y%20servicios." target="_blank" rel="noopener noreferrer" class="hover:text-green-500 transition duration-300">
+        <a href="https://api.whatsapp.com/send?phone=573045840264&text=Hola,%20quiero%20agendar%20una%20cita%20con%20Andres%20el%20barbero.%20¿Podrías%20ayudarme%20con%20la%20disponibilidad?" target="_blank" rel="noopener noreferrer" class="hover:text-green-500 transition duration-300">
           <i class="fab fa-whatsapp text-white text-2xl transition-transform duration-300 hover:scale-125 hover:text-green-500"></i>
         </a>
         <a href="#" target="#" rel="#" class="transition-transform duration-300 hover:scale-125 group">
@@ -32,7 +32,6 @@
           <i class="fab fa-pinterest text-white text-2xl group-hover:text-red-500"></i>
         </a>
       </div>
-
     </div>
 
     <div class="mt-10 w-full max-w-md">
@@ -43,22 +42,21 @@
       <!-- <div class="flex justify-center text-yellow-500 mb-6">
         <span>⭐⭐⭐⭐⭐</span>
       </div> -->
-      <div class="flex justify-center text-yellow-500 mb-6 space-x-1">
-        <span class="text-2xl star-bounce" style="animation-delay: 0s;">⭐</span>
-        <span class="text-2xl star-bounce" style="animation-delay: 0.1s;">⭐</span>
-        <span class="text-2xl star-bounce" style="animation-delay: 0.2s;">⭐</span>
-        <span class="text-2xl star-bounce" style="animation-delay: 0.3s;">⭐</span>
-        <span class="text-2xl star-bounce" style="animation-delay: 0.4s;">⭐</span>
-      </div>
+        <div class="flex justify-center text-yellow-500 mb-6 space-x-1">
+          <span class="text-2xl star-bounce" style="animation-delay: 0s;">⭐</span>
+          <span class="text-2xl star-bounce" style="animation-delay: 0.1s;">⭐</span>
+          <span class="text-2xl star-bounce" style="animation-delay: 0.2s;">⭐</span>
+          <span class="text-2xl star-bounce" style="animation-delay: 0.3s;">⭐</span>
+          <span class="text-2xl star-bounce" style="animation-delay: 0.4s;">⭐</span>
+        </div>
 
-      <div class="space-y-4">
-        <ServiceButton title="CORTE" priceCOP="40.000" priceUSD="10.00" />
-        <ServiceButton title="CORTE Y BARBA" priceCOP="50.000" priceUSD="13.00" />
-        <ServiceButton title="SOLO BARBA" priceCOP="25.000" priceUSD="7.00" />
-        <ServiceButton title="DEPILACIÓN DE NARIZ" priceCOP="20.000" priceUSD="5.00" />
-        <ServiceButton title="DEPILACIÓN DE OIDOS" priceCOP="20.000" priceUSD="5.00" />
-        <!-- <ServiceButton title="SERVICIO V.I.P ⚡" icon="🦅" priceCOP="500.000" priceUSD="120.00" /> -->
-      </div>
+        <div class="space-y-4">
+          <ServiceButton title="CORTE" priceCOP="40.000" priceUSD="10.00" @click="() => goToWhatsApp('CORTE')" />
+          <ServiceButton title="CORTE Y BARBA" priceCOP="50.000" priceUSD="13.00" @click="() => goToWhatsApp('CORTE Y BARBA')" />
+          <ServiceButton title="SOLO BARBA" priceCOP="25.000" priceUSD="7.00" @click="() => goToWhatsApp('SOLO BARBA')" />
+          <ServiceButton title="DEPILACIÓN DE NARIZ" priceCOP="20.000" priceUSD="5.00" @click="() => goToWhatsApp('DEPILACIÓN DE NARIZ')" />
+          <ServiceButton title="DEPILACIÓN DE OIDOS" priceCOP="20.000" priceUSD="5.00" @click="() => goToWhatsApp('DEPILACIÓN DE OIDOS')" />
+        </div>
     </div>
   </div>
 </template>
@@ -71,8 +69,15 @@ export default {
     ServiceButton
   },
   methods: {
-    goToAbout() {
-      this.$router.push({ name: 'About' })
+    // goToAgendarCita() {
+    //   this.$router.push({ name: 'AgendarCita' })
+    // },
+    goToWhatsApp(serviceName) {
+      const barberName = 'Andrés'
+      const phone = '573045840264'
+      const mensaje = `Hola ${barberName}, estoy interesado en agendar una cita para un ${serviceName}.`
+      const url = `https://api.whatsapp.com/send?phone=${phone}&text=${encodeURIComponent(mensaje)}`
+      window.open(url, '_blank')
     }
   }
 }
