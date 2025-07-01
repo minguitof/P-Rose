@@ -9,8 +9,8 @@
           class="w-full h-full object-cover mask-fade"
         />
       </div>
-      <h1 class="text-2xl font-bold">Andres Felipe Hernandez</h1>
-      <p class="text-md text-gray-300">REFLEJÁ TU MEJOR VERSIÓN ⭐</p>
+      <h1 class="text-2xl font-bold mt-4">Andres Felipe Hernandez</h1>
+      <p class="text-md text-gray-300 mt-2">REFLEJÁ TU MEJOR VERSIÓN ⭐</p>
       <br>
       <p class="text-sm text-gray-300 italic tracking-wide">Tu look habla por vos. Asegurate de que diga lo correcto.</p>
 
