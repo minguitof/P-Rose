@@ -28,7 +28,7 @@ cd P-Rose/Front
 npm install
 
 # Run the development server
-npm run dev
+npm run serve
 ```
 
 ## 📦 Deployment

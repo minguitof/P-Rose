@@ -64,7 +64,7 @@
           :key="services.id"
           class="overflow-visible"
         >
-          <div class="w-full aspect-square rounded-2xl overflow-hidden shadow-lg transition duration-300 ease-in-out hover:scale-[1.02] origin-center">
+          <div class="w-full aspect-square rounded-2xl overflow-hidden shadow-lg transition duration-300 ease-in-out hover:scale-[1.02] origin-center cursor-crosshair">
             <img
               :src="services.image"
               alt=""
