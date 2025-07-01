@@ -7,7 +7,7 @@
                 href="https://www.linkedin.com/in/john-mario-echavarria-bermudez/"
                 target="_blank"
                 rel="noopener noreferrer"
-                class="text-yellow-400 font-semibold hover:underline"
+                class="text-amber-400 font-medium hover:text-amber-300 transition duration-300"
               >
                 Minguitof
               </a>

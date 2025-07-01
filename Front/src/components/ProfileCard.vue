@@ -2,11 +2,13 @@
 <template>
   <div class="bg-black text-white min-h-screen flex flex-col items-center p-6">
     <div class="flex flex-col items-center">
-      <img
-        src="@/assets/profile.jpg"
-        alt="Andres Felipe Hernandez"
-        class="w-96 h-96 rounded-full object-cover mb-4 border-4 border-yellow-500"
-      />
+      <div class="group relative w-76 h-80 rounded-xl overflow-hidden bg-black">
+        <img
+          src="@/assets/profile_andres.jpg"
+          alt="Andres Felipe Hernandez"
+          class="w-full h-full object-cover mask-fade"
+        />
+      </div>
       <h1 class="text-2xl font-bold">Andres Felipe Hernandez</h1>
       <p class="text-md text-gray-300">REFLEJÁ TU MEJOR VERSIÓN ⭐</p>
       <br>
@@ -95,6 +97,5 @@ export default {
   display: inline-block;
   animation: wave-bounce 1s ease-in-out infinite;
 }
-
 
 </style>

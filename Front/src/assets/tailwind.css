@@ -5,3 +5,16 @@
 body {
   @apply bg-black text-white;
 }
+
+@layer utilities {
+  .mask-fade {
+    mask-image: radial-gradient(circle at center, black 70%, transparent 95%);
+    -webkit-mask-image: radial-gradient(circle at center, black 70%, transparent 95%);
+    mask-repeat: no-repeat;
+    mask-size: cover;
+    -webkit-mask-repeat: no-repeat;
+    -webkit-mask-size: cover;
+  }
+}
+
+

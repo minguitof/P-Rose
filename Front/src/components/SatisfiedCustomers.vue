@@ -2,11 +2,9 @@
 <template>
 <div class="mt-10 w-full max-w-md">
       <div class="mt-10 w-full max-w-md">
-            <!-- <h2 class="text-center text-yellow-500 font-bold text-lg mb-2">SERVICIOS DESTACADOS</h2> -->
             <h2 class="text-center text-yellow-500 font-bold text-lg mb-2 hover:scale-105 transition-transform duration-300 ease-in-out cursor-pointer">
               SERVICIOS DESTACADOS
             </h2>
-
             <!-- <div class="flex justify-center text-yellow-500 text-xl mb-6">
                 <span>✦✧✦━━❖━━✦✧✦</span>
             </div> -->
@@ -110,19 +108,6 @@ onMounted(async () => {
 
 
 /* Efectos para el separador */
-
-/* @keyframes glitch {
-  0% { transform: none; opacity: 1; }
-  20% { transform: translateX(-1px) skewX(-10deg); opacity: 0.8; }
-  40% { transform: translateX(1px) skewX(10deg); opacity: 1; }
-  60% { transform: translateX(-1px) skewX(-5deg); opacity: 0.9; }
-  80% { transform: translateX(1px) skewX(5deg); opacity: 1; }
-  100% { transform: none; opacity: 1; }
-}
-.glitch {
-  animation: glitch 1.5s infinite ease-in-out;
-  display: inline-block;
-} */
 
 @keyframes glitch-gold {
   0% {
