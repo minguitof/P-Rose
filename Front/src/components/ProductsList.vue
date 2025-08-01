@@ -74,7 +74,7 @@
           class="overflow-visible"
         >
           <div
-              class="h-[430px] max-w-[420px] bg-gradient-to-b from-black via-gray-900 to-black border border-yellow-400 rounded-2xl shadow-lg text-white mx-auto overflow-hidden hover:scale-105 transition-transform duration-300 flex flex-col cursor-crosshair"
+              class="h-[460px] max-w-[420px] bg-gradient-to-b from-black via-gray-900 to-black border border-yellow-400 rounded-2xl shadow-lg text-white mx-auto overflow-hidden hover:scale-105 transition-transform duration-300 flex flex-col cursor-crosshair"
               @click="enviarMensajeWhatsApp(product.name, product.price)"
           >
               <img :src="product.image" alt="" class="h-[65%] w-full object-cover" />
