@@ -64,7 +64,7 @@
         :breakpoints="{
           640: { slidesPerView: 2 },
           768: { slidesPerView: 3 },
-          1024: { slidesPerView: 4 }
+          1024: { slidesPerView: 3 }
         }"
         :pagination="true"
       >
@@ -74,14 +74,19 @@
           class="overflow-visible"
         >
           <div
-            class="aspect-square max-w-[420px] bg-gradient-to-b from-black via-gray-900 to-black border border-yellow-400 rounded-2xl shadow-lg text-white mx-auto overflow-hidden hover:scale-105 transition-transform duration-300 flex flex-col cursor-crosshair"
-            @click="enviarMensajeWhatsApp(product.name, product.price)"
+              class="h-[400px] max-w-[420px] bg-gradient-to-b from-black via-gray-900 to-black border border-yellow-400 rounded-2xl shadow-lg text-white mx-auto overflow-hidden hover:scale-105 transition-transform duration-300 flex flex-col cursor-crosshair"
+              @click="enviarMensajeWhatsApp(product.name, product.price)"
           >
-            <img :src="product.image" alt="" class="h-[70%] w-full object-cover" />
-            <div class="p-3 h-[40%] flex flex-col justify-between">
-              <h3 class="text-lg font-bold">{{ product.name }}</h3>
-              <p class="text-yellow-300 font-semibold">{{ product.price }}</p>
-            </div>
+              <img :src="product.image" alt="" class="h-[65%] w-full object-cover" />
+
+              <div class="p-3 flex flex-col flex-grow justify-between">
+                  <div> 
+                      <h3 class="text-xl font-bold leading-tight">{{ product.name }}</h3>
+                      <h2 class="text-sm font-bold text-gray-400 mt-1 line-clamp-3">{{ product.description }}</h2>
+                  </div>
+                  
+                  <p class="text-lg text-yellow-300 font-semibold mt-2">{{ product.price }}</p>
+              </div>
           </div>
         </SwiperSlide>
       </Swiper>
@@ -96,17 +101,14 @@ import 'swiper/css'
 import 'swiper/css/pagination'
 import 'swiper/css/navigation'
 
+// Importa la imagen como un módulo
+//import ceraGold from '@/assets/products/cera_gold_nishman.webp'
+
 const products = [
-  { id: 1, name: 'Shampoo hidratante', price: '$100.000 COP', image: 'https://assets.tmecosys.com/image/upload/t_web_rdp_recipe_584x480/img/recipe/ras/Assets/a321a2a3-4cd5-4b8c-853c-ade4d6e2a330/Derivates/885d4ee3-4751-4921-a6d5-7f0f0c9638a3.jpg' },
-  { id: 2, name: 'Shampoo matizante', price: '$120.000 COP', image: 'https://assets.tmecosys.com/image/upload/t_web_rdp_recipe_584x480/img/recipe/ras/Assets/a321a2a3-4cd5-4b8c-853c-ade4d6e2a330/Derivates/885d4ee3-4751-4921-a6d5-7f0f0c9638a3.jpg' },
-  { id: 3, name: 'Crema para peinar', price: '$95.000 COP', image: 'https://assets.tmecosys.com/image/upload/t_web_rdp_recipe_584x480/img/recipe/ras/Assets/a321a2a3-4cd5-4b8c-853c-ade4d6e2a330/Derivates/885d4ee3-4751-4921-a6d5-7f0f0c9638a3.jpg' },
-  { id: 4, name: 'Acondicionador reparador', price: '$130.000 COP', image: 'https://assets.tmecosys.com/image/upload/t_web_rdp_recipe_584x480/img/recipe/ras/Assets/a321a2a3-4cd5-4b8c-853c-ade4d6e2a330/Derivates/885d4ee3-4751-4921-a6d5-7f0f0c9638a3.jpg' },
-  { id: 5, name: 'Mascarilla capilar', price: '$130.000 COP', image: 'https://assets.tmecosys.com/image/upload/t_web_rdp_recipe_584x480/img/recipe/ras/Assets/a321a2a3-4cd5-4b8c-853c-ade4d6e2a330/Derivates/885d4ee3-4751-4921-a6d5-7f0f0c9638a3.jpg' },
-  { id: 6, name: 'Cera moldeadora', price: '$100.000 COP', image: 'https://assets.tmecosys.com/image/upload/t_web_rdp_recipe_584x480/img/recipe/ras/Assets/a321a2a3-4cd5-4b8c-853c-ade4d6e2a330/Derivates/885d4ee3-4751-4921-a6d5-7f0f0c9638a3.jpg' },
-  { id: 7, name: 'Gel fijador', price: '$120.000 COP', image: 'https://assets.tmecosys.com/image/upload/t_web_rdp_recipe_584x480/img/recipe/ras/Assets/a321a2a3-4cd5-4b8c-853c-ade4d6e2a330/Derivates/885d4ee3-4751-4921-a6d5-7f0f0c9638a3.jpg' },
-  { id: 8, name: 'Aceite capilar', price: '$95.000 COP', image: 'https://assets.tmecosys.com/image/upload/t_web_rdp_recipe_584x480/img/recipe/ras/Assets/a321a2a3-4cd5-4b8c-853c-ade4d6e2a330/Derivates/885d4ee3-4751-4921-a6d5-7f0f0c9638a3.jpg' },
-  { id: 9, name: 'Spray anti-frizz', price: '$130.000 COP', image: 'https://assets.tmecosys.com/image/upload/t_web_rdp_recipe_584x480/img/recipe/ras/Assets/a321a2a3-4cd5-4b8c-853c-ade4d6e2a330/Derivates/885d4ee3-4751-4921-a6d5-7f0f0c9638a3.jpg' },
-  { id: 10, name: 'Tónico capilar', price: '$130.000 COP', image: 'https://assets.tmecosys.com/image/upload/t_web_rdp_recipe_584x480/img/recipe/ras/Assets/a321a2a3-4cd5-4b8c-853c-ade4d6e2a330/Derivates/885d4ee3-4751-4921-a6d5-7f0f0c9638a3.jpg' },
+  { id: 1, name: 'Cera Naranja Nishman', description: 'Color naranja (Sport): Cera de fijación fuerte con brillo medio, ideal para un look dinámico y fresco.', price: '$45.000 COP', image: '/products/cera_naranja_nishman.webp'  },
+  { id: 2, name: 'Cera Verde Nishman', description: 'Color verde (Keratin M2): A base de keratina, ofrece una fijación alta sin dejar residuos grasos.' , price: '$45.000 COP' , image: '/products/cera_verde_nishman.webp' },
+  { id: 3, name: 'Cera Gold Nishman', description: 'Color negro/dorado: Modelo “Gold One” o edición especial, con brillo medio y formulación elaborada.', price: '$45.000 COP' , image: '/products/cera_gold_nishman.webp' },
+  { id: 4, name: 'Cera Verde y Morado Nishman', description: 'Verde claro (Rugby o Keratin variante): Acabado mate a brillante, con fijación flexible y textura ligera.', price: '$45.000 COP', image: '/products/cera_verde_y_morado_nishman.webp' },
 ]
 
 onMounted(async () => {
